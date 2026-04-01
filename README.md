@@ -1,1 +1,1 @@
-# open-workshop-url
+# workshop-url
