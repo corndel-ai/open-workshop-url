@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unique URL Generator</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 20px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #0069d9;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0053b3;
+    }
+
+    .result {
+      margin-top: 25px;
+      padding: 15px;
+      background: #f1f1f1;
+      border-left: 4px solid #0069d9;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Unique URL Generator</h1>
+
+  <label for="username">GitHub username:</label>
+  <input type="text" id="username" placeholder="e.g. aescgeorge" />
+
+  <label for="unit">Unit number (1–99):</label>
+  <input type="number" id="unit" min="1" max="99" placeholder="e.g. 12" />
+
+  <button onclick="generateURL()">Get my unique URL</button>
+
+  <div class="result" id="resultBox">
+    <p>Your unique URL:</p>
+    <p id="outputURL"></p>
+  </div>
+
+  <script>
+    function generateURL() {
+      const username = document.getElementById("username").value.trim();
+      const unit = document.getElementById("unit").value.trim();
+
+      if (!username || !unit) {
+        alert("Please enter both your GitHub username and unit number.");
+        return;
+      }
+
+      const url = `https://github.com/corndel-ai/ai6-${unit}w-open-${username}`;
+      
+      document.getElementById("outputURL").innerHTML =
+        `${url}${url}</a>`;
+
+      document.getElementById("resultBox").style.display = "block";
+    }
+  </script>
+</body>
+</html>
